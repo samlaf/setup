@@ -2,20 +2,15 @@
 # Simple setup.sh for configuring Ubuntu 12.04 LTS EC2 instance
 # for headless setup. 
 
-# Install node 5.x
-curl -sL https://deb.nodesource.com/setup_5.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
 # Install nvm: node-version manager
 # https://github.com/creationix/nvm
 sudo apt-get install -y git
 sudo apt-get install -y curl
-curl https://raw.github.com/creationix/nvm/master/install.sh | sh
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.30.2/install.sh | bash
 
 # Load nvm and install latest production node
-source $HOME/.nvm/nvm.sh
-nvm install v0.10.12
-nvm use v0.10.12
+nvm install 5.0
+nvm use 5.0
 
 # Install jshint to allow checking of JS code within emacs
 # http://jshint.com/
